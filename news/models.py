@@ -5,6 +5,7 @@ from django.db import models
 
 
 class News(models.Model):
+    objects = None
     title = models.CharField(max_length=50)
     text = models.TextField()
     date = models.DateField(default=datetime.today)
@@ -19,6 +20,7 @@ class News(models.Model):
 
 
 class Comment(models.Model):
+    objects = None
     news = models.ForeignKey(
         News,
         on_delete=models.CASCADE
